@@ -53,7 +53,7 @@ public:
 	// select the SPI output (TODO: research whether this really means hi or lo.  Alt TODO: move select responsibility out of the SPI classes
 	// entirely, make it up to the caller to remember to lock/select the line?)
 	void select() { 
-		SPI.beginTransaction(SPISettings(1000000, MSBFIRST, SPI_MODE0));
+		SPI.beginTransaction(SPISettings(3200000, MSBFIRST, SPI_MODE0));
 		if(m_pSelect != NULL) { m_pSelect->select(); } 
 	} 
 
